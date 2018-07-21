@@ -41,7 +41,7 @@ namespace ImHasher
             return 0;
         }
 
-        //
+        // Private
 
         private static bool FillArgs(string[] args, Dictionary<string, string> dict)
         {
