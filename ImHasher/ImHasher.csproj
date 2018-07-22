@@ -11,7 +11,7 @@
     <PackageTags>tools,image,hash</PackageTags>
     <Description>A global dotnet tool for comparing the similarity of two images.</Description>
     <Authors>Ghasan Al-Sakkaf</Authors>
-    <Version>0.1.0-beta</Version>
+    <Version>0.1.1-beta</Version>
   </PropertyGroup>
 
   <ItemGroup>

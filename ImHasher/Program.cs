@@ -16,7 +16,15 @@ namespace ImHasher
 
             if (!isValid)
             {
-                Console.Write(GetHelp());
+                if (String.IsNullOrWhiteSpace(Error))
+                {
+                    Console.Error.Write(GetHelp());
+                }
+                else
+                {
+                    Console.Error.Write(Error);
+                }
+
                 return 1;
             }
 
@@ -32,8 +40,20 @@ namespace ImHasher
                 hasher = new ImDiffHash(tolerance);
             }
 
-            bool[] hash1 = hasher.GetImageHash(argsDict["img1"]);
-            bool[] hash2 = hasher.GetImageHash(argsDict["img2"]);
+            bool[] hash1;
+            bool[] hash2;
+
+            try
+            {
+                hash1 = hasher.GetImageHash(argsDict["img1"]);
+                hash2 = hasher.GetImageHash(argsDict["img2"]);
+            }
+            catch (Exception e)
+            {
+                Error = e.Message;
+                Console.Error.Write(Error);
+                return 1;
+            }
 
             bool areSimilar = hasher.AreSimilar(hash1, hash2);
             Console.Write(areSimilar.ToString().ToLower());
@@ -42,6 +62,8 @@ namespace ImHasher
         }
 
         // Private
+
+        private static string Error { get; set; }
 
         private static bool FillArgs(string[] args, Dictionary<string, string> dict)
         {
@@ -80,6 +102,12 @@ namespace ImHasher
 
             if (argsIndex["t"] != -1 && !Int32.TryParse(match.Groups[argsIndex["t"] + 1].Value, out int tolerance))
             {
+                return false;
+            }
+
+            if (match.Groups.Skip(7).Any(i => !i.Value.EndsWith(".jpg", StringComparison.InvariantCultureIgnoreCase)))
+            {
+                Error = "Only .jpg files are allowed now.";
                 return false;
             }
 
