@@ -2,7 +2,7 @@
 A global dotnet tool for comparing the similarity of two images.
 
 # Installation
-     dotnet tool install --global ImHasher --version 0.1.0-beta 
+https://www.nuget.org/packages/ImHasher/
 
 # Usage
     imhasher path_to_img1  path_to_img2
