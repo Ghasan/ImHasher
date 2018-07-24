@@ -8,10 +8,11 @@
     <PackageProjectUrl>https://github.com/Ghasan/ImHasher</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Ghasan/ImHasher</RepositoryUrl>
     <PackageReleaseNotes />
-    <PackageTags>tools,image,hash</PackageTags>
+    <PackageTags>perceptual,hash,image,tools</PackageTags>
     <Description>A global dotnet tool for comparing the similarity of two images.</Description>
     <Authors>Ghasan Al-Sakkaf</Authors>
-    <Version>0.1.1-beta</Version>
+    <Version>0.1.2-beta</Version>
+    <AssemblyName>imhasher</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

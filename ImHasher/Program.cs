@@ -18,11 +18,11 @@ namespace ImHasher
             {
                 if (String.IsNullOrWhiteSpace(Error))
                 {
-                    Console.Error.Write(GetHelp());
+                    Console.Error.WriteLine(GetHelp());
                 }
                 else
                 {
-                    Console.Error.Write(Error);
+                    Console.Error.WriteLine(Error);
                 }
 
                 return 1;
@@ -51,12 +51,12 @@ namespace ImHasher
             catch (Exception e)
             {
                 Error = e.Message;
-                Console.Error.Write(Error);
+                Console.Error.WriteLine(Error);
                 return 1;
             }
 
             bool areSimilar = hasher.AreSimilar(hash1, hash2);
-            Console.Write(areSimilar.ToString().ToLower());
+            Console.WriteLine(areSimilar.ToString().ToLower());
 
             return 0;
         }
