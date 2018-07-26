@@ -11,7 +11,7 @@
     <PackageTags>perceptual,hash,image,tools</PackageTags>
     <Description>A global dotnet tool for comparing the similarity of two images.</Description>
     <Authors>Ghasan Al-Sakkaf</Authors>
-    <Version>0.1.2-beta</Version>
+    <Version>0.1.3-beta</Version>
     <AssemblyName>imhasher</AssemblyName>
   </PropertyGroup>
 

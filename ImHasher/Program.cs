@@ -72,8 +72,8 @@ namespace ImHasher
                 return false;
             }
 
-            string command = args.Aggregate((a, b) => a + " " + b);
-            Match match = Regex.Match(command, @"^(-(m|t) (\w+) )?(-(?!\2)(m|t) (\w+) )?(\S+) (\S+)$");
+            string command = args.Aggregate((a, b) => a + "\n" + b);
+            Match match = Regex.Match(command, @"^(-(m|t) (\w+)\n)?(-(?!\2)(m|t) (\w+)\n)?([\S ]+)\n([\S ]+)$");
 
             if (!match.Success)
             {
